@@ -9,7 +9,7 @@
 public class Employee {
 	static private int idGenerator;
 	static private int counter;
-	
+	// id
 	private int id;
 	private String firstName;
 	private String lastName;
