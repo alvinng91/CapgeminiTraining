@@ -41,7 +41,8 @@ public class Entry
 
 		Contractor c1 = new Contractor("c0", "d0");
 
-		Employee e10 = new ContractEmployee("ce1", "ce1", 3000.0, 'B', new Date(1991, 10, 1));
+		Employee e10 = new ContractEmployee("ce1", "ce1", 'B', new Date(1991, 10, 1), c1, 30.0);
+		Employee e11 = new ContractEmployee("ce2", "ce2", 'B', new Date(1991, 10, 1), c1, 30.0);
 
 		System.out.println("Total number of contract employees created : " + ContractEmployee.getCount());
 
