@@ -13,48 +13,44 @@ public class Employee {
 	private int id;
 	private String firstName;
 	private String lastName;
-	private float salary;
+	private double salary;
 	private char grade;
-	private String joinDate;
-		
+	private Date joinDate;
+
 	{
 		++counter;
 		this.id = idGenerator++;
 	}
-	
-	public Employee()
-	{
+
+	public Employee() {
 		this.firstName = "firstName";
 		this.lastName = "lastName";
 		this.salary = 3000.0f;
 		this.grade = 'B';
-		this.joinDate = "mmm:yyyy";
+		this.joinDate = new Date(1991, 10, 31);
 	}
-	
-	public Employee(String firstName, String lastName, float salary, char grade, String joinDate)
-	{
+
+	public Employee(String firstName, String lastName, double salary, char grade, Date joinDate) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.salary = salary;
 		this.grade = grade;
 		this.joinDate = joinDate;
 	}
-	
-	static public int GetEmployeeCount()
-	{
+
+	static public int GetEmployeeCount() {
 		return counter;
 	}
-	
-	public void PrintEmployeeDetails()
-	{
+
+	public void PrintEmployeeDetails() {
 		System.out.println("ID : " + getId());
 		System.out.println("First Name : " + getFirstName());
 		System.out.println("Last Name : " + getLastName());
 		System.out.println("Salary : " + getSalary());
 		System.out.println("Grade : " + getGrade());
-		System.out.println("Join Date : " + getJoinDate());
+		System.out.println("Join Date : " + joinDate.getDate());
 	}
-	
+
 	public int getId() {
 		return id;
 	}
@@ -75,11 +71,11 @@ public class Employee {
 		this.lastName = lastName;
 	}
 
-	public float getSalary() {
+	public double getSalary() {
 		return salary;
 	}
 
-	public void setSalary(float salary) {
+	public void setSalary(double salary) {
 		this.salary = salary;
 	}
 
@@ -91,11 +87,17 @@ public class Employee {
 		this.grade = grade;
 	}
 
-	public String getJoinDate() {
+	public Date getJoinDate() {
 		return joinDate;
 	}
 
-	public void setJoinDate(String joinDate) {
+	public void setJoinDate(Date joinDate) {
 		this.joinDate = joinDate;
+	}
+
+	public void setJoinDate(int year, int month, int day) {
+		this.joinDate.setYear(year);
+		this.joinDate.setMonth(month);
+		this.joinDate.setDay(day);
 	}
 }
