@@ -4,6 +4,7 @@ public class Entry
 
 	public static void main(String[] args)
 	{
+		EmployeeDatabase db = EmployeeDatabase.getInstance();
 
 		System.out.println("Total number of employees created : " + Employee.GetEmployeeCount());
 
@@ -44,8 +45,28 @@ public class Entry
 		Employee e10 = new ContractEmployee("ce1", "ce1", 'B', new Date(1991, 10, 1), c1, 30.0);
 		Employee e11 = new ContractEmployee("ce2", "ce2", 'B', new Date(1991, 10, 1), c1, 30.0);
 
+		db.addEmployee(e1);
+		db.addEmployee(e2);
+		db.addEmployee(e3);
+		// db.addEmployee(e4);
+		db.addEmployee(e5);
+		db.addEmployee(e6);
+		db.addEmployee(e7);
+		db.addEmployee(e8);
+		db.addEmployee(e9);
+		db.addEmployee(e10);
+		db.addEmployee(e11);
+
 		System.out.println("Total number of contract employees created : " + ContractEmployee.getCount());
 
+		try
+		{
+			db.searchEmployee(3).PrintEmployeeDetails();
+		}
+		catch (EmployeeNotFoundException e)
+		{
+			e.printStackTrace();
+		}
 	}
 
 }
