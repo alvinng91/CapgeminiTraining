@@ -6,7 +6,8 @@
  * @author alving
  *
  */
-public class Employee {
+abstract public class Employee
+{
 	static private int idGenerator;
 	static private int counter;
 	// id
@@ -22,7 +23,8 @@ public class Employee {
 		this.id = idGenerator++;
 	}
 
-	public Employee() {
+	public Employee()
+	{
 		this.firstName = "firstName";
 		this.lastName = "lastName";
 		this.salary = 3000.0f;
@@ -30,7 +32,8 @@ public class Employee {
 		this.joinDate = new Date(1991, 10, 31);
 	}
 
-	public Employee(String firstName, String lastName, double salary, char grade, Date joinDate) {
+	public Employee(String firstName, String lastName, double salary, char grade, Date joinDate)
+	{
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.salary = salary;
@@ -38,64 +41,84 @@ public class Employee {
 		this.joinDate = joinDate;
 	}
 
-	static public int GetEmployeeCount() {
+	static public int GetEmployeeCount()
+	{
 		return counter;
 	}
 
-	public void PrintEmployeeDetails() {
-		System.out.println("ID : " + getId());
-		System.out.println("First Name : " + getFirstName());
-		System.out.println("Last Name : " + getLastName());
-		System.out.println("Salary : " + getSalary());
-		System.out.println("Grade : " + getGrade());
-		System.out.println("Join Date : " + joinDate.getDate());
+	@Override
+	public String toString()
+	{
+		return "ID : " + getId() + "\n" + "First Name : " + getFirstName() + "\n" + "Last Name : " + getLastName()
+				+ "\n" + "Salary : " + getSalary() + "\n" + "Grade : " + getGrade() + "\n" + "Join Date : "
+				+ joinDate.getDate() + "\n";
+
+		/*
+		 * System.out.println("ID : " + getId()); System.out.println(
+		 * "First Name : " + getFirstName()); System.out.println("Last Name : "
+		 * + getLastName()); System.out.println("Salary : " + getSalary());
+		 * System.out.println("Grade : " + getGrade()); System.out.println(
+		 * "Join Date : " + joinDate.getDate());
+		 */
 	}
 
-	public int getId() {
+	public int getId()
+	{
 		return id;
 	}
 
-	public String getFirstName() {
+	public String getFirstName()
+	{
 		return firstName;
 	}
 
-	public void setFirstName(String firstName) {
+	public void setFirstName(String firstName)
+	{
 		this.firstName = firstName;
 	}
 
-	public String getLastName() {
+	public String getLastName()
+	{
 		return lastName;
 	}
 
-	public void setLastName(String lastName) {
+	public void setLastName(String lastName)
+	{
 		this.lastName = lastName;
 	}
 
-	public double getSalary() {
+	public double getSalary()
+	{
 		return salary;
 	}
 
-	public void setSalary(double salary) {
+	public void setSalary(double salary)
+	{
 		this.salary = salary;
 	}
 
-	public char getGrade() {
+	public char getGrade()
+	{
 		return grade;
 	}
 
-	public void setGrade(char grade) {
+	public void setGrade(char grade)
+	{
 		this.grade = grade;
 	}
 
-	public Date getJoinDate() {
+	public Date getJoinDate()
+	{
 		return joinDate;
 	}
 
-	public void setJoinDate(Date joinDate) {
+	public void setJoinDate(Date joinDate)
+	{
 		this.joinDate = joinDate;
 	}
 
-	public void setJoinDate(int year, int month, int day) {
+	public void setJoinDate(int year, int month, int day)
+	{
 		this.joinDate.setYear(year);
 		this.joinDate.setMonth(month);
 		this.joinDate.setDay(day);

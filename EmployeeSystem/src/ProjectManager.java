@@ -5,4 +5,10 @@ public class ProjectManager extends PermanentEmployee
 	{
 		super(firstName, lastName, salary, grade, joinDate);
 	}
+
+	@Override
+	public void setMediclaimCoverage()
+	{
+		getMediclaim().setCoveragePercentage(100.0);
+	}
 }

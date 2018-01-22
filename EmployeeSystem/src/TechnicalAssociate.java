@@ -1,9 +1,17 @@
 
-public class TechnicalAssociate extends ContractEmployee
+public class TechnicalAssociate extends PermanentEmployee
 {
-	TechnicalAssociate(String firstName, String lastName, char grade, Date joinDate, Contractor contractor,
-			double ratePerHour)
+
+	public TechnicalAssociate(String firstName, String lastName, double salary, char grade, Date joinDate)
 	{
-		super(firstName, lastName, grade, joinDate, contractor, ratePerHour);
+		super(firstName, lastName, salary, grade, joinDate);
+		// TODO Auto-generated constructor stub
 	}
+
+	@Override
+	public void setMediclaimCoverage()
+	{
+		getMediclaim().setCoveragePercentage(200.0);
+	}
+
 }
