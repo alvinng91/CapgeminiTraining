@@ -6,7 +6,7 @@
  * @author alving
  *
  */
-abstract public class Employee
+abstract public class Employee implements Certification
 {
 	static private int idGenerator;
 	static private int counter;
@@ -14,6 +14,52 @@ abstract public class Employee
 	private int id;
 	private String firstName;
 	private String lastName;
+	private String designation;
+	private int certCounter;
+	private Certification.Cert[] certs;
+
+	@Override
+	public void addCert(Cert cert)
+	{
+		if (certs == null)
+			certs = new Certification.Cert[3];
+
+		certs[certCounter++] = cert;
+	}
+
+	@Override
+	final public Cert[] getCerts()
+	{
+		return certs;
+	}
+
+	public String certToString()
+	{
+		String output = "";
+		if (certs == null)
+		{
+			output += "NIL";
+		}
+		else
+		{
+			for (int i = 0; i < certCounter; ++i)
+			{
+				output += certs[i] + (i == certCounter - 1 ? "" : "/");
+			}
+		}
+		return output;
+	}
+
+	public String getDesignation()
+	{
+		return designation;
+	}
+
+	public void setDesignation(String designation)
+	{
+		this.designation = designation;
+	}
+
 	private double salary;
 	private char grade;
 	private Date joinDate;

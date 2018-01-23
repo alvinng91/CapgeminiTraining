@@ -19,7 +19,12 @@ public class Contractor
 
 	public class ContractEmployee extends Employee
 	{
-		// private Contractor contractor;
+
+		// @Override
+		// public void addCert(Cert cert)
+		// {
+		// super.addCert(cert);
+		// }
 
 		private int hoursWorked;
 
@@ -70,11 +75,46 @@ public class Contractor
 		}
 	}
 
-	private class TechnicalAssociate extends ContractEmployee
+	public class TechnicalAssociate extends ContractEmployee
 	{
+		{
+			setDesignation("TA-C");
+		}
+
+		@Override
+		public void addCert(Cert cert)
+		{
+			if (cert != cert.PMI)
+			{
+				super.addCert(cert);
+			}
+		}
+
 		TechnicalAssociate(String firstName, String lastName, char grade, Date joinDate)
 		{
 			super(firstName, lastName, grade, joinDate);
+		}
+
+		@Override
+		public double getSalary()
+		{
+			if (getHoursWorked() <= 40)
+			{
+				return ratePerHour * getHoursWorked();
+			}
+			else
+			{
+				return ratePerHour * getHoursWorked() + (getHoursWorked() - 40) * ratePerHour * 2;
+			}
+		}
+
+		@Override
+		public String toString()
+		{
+			return "Employee ID : " + Integer.toString(getId()) + "\nName : " + getFirstName() + " " + getLastName()
+					+ "\nDesignation : " + getDesignation() + "\nYears of experience : "
+					+ Integer.toString(getJoinDate().getYearsOfExperience()) + "\nSalary : " + getSalary()
+					+ "\nCertification(s) : " + certToString() + "\n";
 		}
 	}
 

@@ -1,3 +1,4 @@
+
 public class Entry
 {
 
@@ -11,7 +12,9 @@ public class Entry
 		// e1.PrintEmployeeDetails();
 
 		Employee e2 = new ProjectManager("aaa2", "bbb2", 3000.0, 'B', new Date(1991, 10, 1));
+		e2.addCert(Certification.Cert.PMI);
 		System.out.println(e2);
+		System.out.println("\n-------------------\n");
 
 		Employee e3 = new TechnicalAssociate("aaa3", "bbb3", 3000.0, 'B', new Date(1991, 10, 1));
 		// e3.PrintEmployeeDetails();
@@ -19,10 +22,15 @@ public class Entry
 		System.out.println("Total number of employees created : " + Employee.GetEmployeeCount());
 
 		Employee e4 = new ProjectManager("aaa4", "bbb4", 3000.0, 'B', new Date(1991, 10, 1));
-		// e4.PrintEmployeeDetails();
+		e4.addCert(Certification.Cert.PMI);
+		System.out.println(e4);
+		System.out.println("\n-------------------\n");
 
 		Employee e5 = new TechnicalAssociate("aaa5", "bbb5", 3000.0, 'B', new Date(1991, 10, 1));
-		// e5.PrintEmployeeDetails();
+		e5.addCert(Certification.Cert.SCBCD);
+		e5.addCert(Certification.Cert.SCJP);
+		System.out.println(e5);
+		System.out.println("\n-------------------\n");
 
 		System.out.println("Total number of employees created : " + Employee.GetEmployeeCount());
 
@@ -43,6 +51,10 @@ public class Entry
 
 		Contractor.ContractEmployee ce1 = c1.new ContractEmployee("ce1", "ce1", 'B', new Date(1991, 10, 1));
 		Contractor.ContractEmployee ce2 = c1.new ContractEmployee("ce2", "ce2", 'B', new Date(1991, 10, 1));
+		Contractor.TechnicalAssociate ce3 = c1.new TechnicalAssociate("ce3", "ce3", 'B', new Date(1991, 10, 1));
+		ce3.addCert(Certification.Cert.SCBCD);
+		ce3.addCert(Certification.Cert.SCJP);
+		ce3.addCert(Certification.Cert.SCWCD);
 		// c1.addEmployee("ce1", "ce1", 'B', new Date(1991, 10, 1), 30.0);
 		// c1.addEmployee("ce2", "ce2", 'B', new Date(1991, 10, 1), 30.0);
 		System.out.println("------------------------------");
