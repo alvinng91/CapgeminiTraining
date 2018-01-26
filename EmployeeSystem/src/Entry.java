@@ -78,14 +78,14 @@ public class Entry
 		db.addEmployee(e8);
 		db.addEmployee(e9);
 
-		// try
-		// {
-		// db.searchEmployee(3).PrintEmployeeDetails();
-		// }
-		// catch (EmployeeNotFoundException e)
-		// {
-		// e.printStackTrace();
-		// }
+		try
+		{
+			System.out.println(db.searchEmployee(100));
+		}
+		catch (EmployeeNotFoundException e)
+		{
+			e.printStackTrace();
+		}
 	}
 
 }
